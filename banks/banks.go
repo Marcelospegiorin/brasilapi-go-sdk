@@ -20,14 +20,14 @@ func GetAll() ([]bank, error) {
 
 	var banksResult []bank
 
-	resp, err := request.NewRequest(params)
+	req, err := request.NewRequest(params)
 	if err != nil {
 		return nil, err
 	}
 
-	defer resp.Body.Close()
+	defer req.Body.Close()
 
-	err = json.NewDecoder(resp.Body).Decode(&banksResult)
+	err = json.NewDecoder(req.Body).Decode(&banksResult)
 	if err != nil {
 		return nil, err
 	}
@@ -35,24 +35,26 @@ func GetAll() ([]bank, error) {
 	return banksResult, nil
 }
 
-func GetOne(id string) ([]bank, error) {
+func GetOne(id int) (bank, error) {
+
 	params := request.Request{
-		URL:    "https://brasilapi.com.br/api/banks/v1" + id,
+		URL:    "https://brasilapi.com.br/api/banks/v1/260",
 		Method: "GET",
 	}
 
-	var banksResult []bank
+	var bankResult bank
 
-	resp, err := request.NewRequest(params)
+	req, err := request.NewRequest(params)
 	if err != nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	err = json.NewDecoder(resp.Body).Decode(&banksResult)
-	if err != nil {
-		return nil, err
+		panic(err)
 	}
 
-	return banksResult, nil
+	defer req.Body.Close()
+
+	err = json.NewDecoder(req.Body).Decode(&bankResult)
+	if err != nil {
+		panic(err)
+	}
+
+	return bankResult, nil
 }
