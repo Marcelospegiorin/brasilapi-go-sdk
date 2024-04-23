@@ -1,8 +1,10 @@
 package banks
 
 import (
-	"brasilapi/utils/request"
 	"encoding/json"
+	"strconv"
+
+	"github.com/marcelospegiorin/brasilapi-go-sdk/utils/request"
 )
 
 type bank struct {
@@ -35,10 +37,12 @@ func GetAll() ([]bank, error) {
 	return banksResult, nil
 }
 
-func GetOne(id int) (bank, error) {
+func GetOne(idReq int) (bank, error) {
+
+	id := strconv.Itoa(idReq)
 
 	params := request.Request{
-		URL:    "https://brasilapi.com.br/api/banks/v1/260",
+		URL:    "https://brasilapi.com.br/api/banks/v1/" + id,
 		Method: "GET",
 	}
 
