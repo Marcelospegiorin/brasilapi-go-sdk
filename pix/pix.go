@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/marcelospegiorin/brasilapi-go-sdk/utils/request"
+	"github.com/Marcelospegiorin/brasilapi-go-sdk/utils/request"
 )
 
 type pix struct {

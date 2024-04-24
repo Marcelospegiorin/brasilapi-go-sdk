@@ -3,7 +3,7 @@ package taxas
 import (
 	"encoding/json"
 
-	"github.com/marcelospegiorin/brasilapi-go-sdk/utils/request"
+	"github.com/Marcelospegiorin/brasilapi-go-sdk/utils/request"
 )
 
 type taxa struct {

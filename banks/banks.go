@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/marcelospegiorin/brasilapi-go-sdk/utils/request"
+	"github.com/Marcelospegiorin/brasilapi-go-sdk/utils/request"
 )
 
 type bank struct {
