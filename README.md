@@ -19,7 +19,7 @@ Em seu projeto, rode o comando:
 <br>
 
 ~~~bash
-    go get -u github.com/Marcelospegiorin/brasilapi-go-sdk
+go get -u github.com/Marcelospegiorin/brasilapi-go-sdk
 ~~~
 
 <br>
